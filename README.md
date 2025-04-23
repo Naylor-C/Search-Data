@@ -1,1 +1,1 @@
-# Infos-Number
+@Naylor-C : como compilar : g++ main.cc -o App `pkg-config --cflags --libs gtkmm-4.0` -std=c++17
