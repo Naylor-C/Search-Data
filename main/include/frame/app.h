@@ -4,6 +4,7 @@ class App : public Gtk::Window
 {
   public:
     App();
+    virtual ~App();
 
 
   protected:
