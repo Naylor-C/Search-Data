@@ -19,14 +19,47 @@ class App : public Gtk::Window
 
 };
 
+App::App() 
+{
+   set_title("Search-Data");
+   set_default_size(800, 600);
+
+
+        // Carrega o CSS
+        auto css_provider = Gtk::CssProvider::create();
+        try {
+            css_provider->load_from_data(
+                "window {"
+                "   background-image: url('files/background/home/quantum.jpg');"
+                "   background-size: cover;"
+                "}"
+            );
+        } catch(const Gtk::CssProviderError& e) {
+            std::cerr << "Erro no CSS: " << e.what() << std::endl;
+        }
+        
+        // Aplica o CSS
+        get_style_context()->add_provider_for_screen(
+            Gdk::Screen::get_default(),
+            css_provider,
+            GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+        
+        // Adiciona widgets de login (como no exemplo anterior)
+        auto login_box = Gtk::make_managed<Gtk::Box>(Gtk::ORIENTATION_VERTICAL, 10);
+        // ... (adicionar entries, botões, etc)
+        
+        add(*login_box);
+        show_all_children();
+};
+
 
 //Frame:
 App:: App() 
 : button_start("Start"),
 : button_options("Options")
 {
-    set_title("Basic application");
-    set_default_size(800, 600);
+   
 
     //layout do button_start//
     button_start.set_margin(10);
