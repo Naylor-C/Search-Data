@@ -5,16 +5,22 @@ class App : public Gtk::Window
   public:
     App();
 
+
   protected:
     
   void on_button_start_clicked();
-  voud on_button_options_clicked();
+  void on_button_options_clicked();
 
-  Gtk:: Button button_start, button_options;  
+  //Buttons:
+  Gtk:: Button button_start, button_options;
+  
+  //Frame:
+  Gtk:: Frame frame_start, frame.options;
+
 };
 
 
-//
+//Frame:
 App:: App() 
 : button_start("Start"),
 : button_options("Options")
@@ -40,12 +46,12 @@ App:: App()
   
 }
 
-void Frame::on_button_start_clicked()
+void App::on_button_start_clicked()
 {
-  
+  App::App
 }
 
-void Frame::on_button_options_clicked()
+void App::on_button_options_clicked()
 {
   
 }
